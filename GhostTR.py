@@ -58,8 +58,9 @@ def IP_Track():
     print(f"{Wh} Region Code     :{Gr}", ip_data["region_code"])
     print(f"{Wh} Latitude        :{Gr}", ip_data["latitude"])
     print(f"{Wh} Longitude       :{Gr}", ip_data["longitude"])
-    lat = int(ip_data['latitude'])
-    lon = int(ip_data['longitude'])
+    # fix: original used int() which truncates decimal coords and shifts the map pin
+    lat = ip_data['latitude']
+    lon = ip_data['longitude']
     print(f"{Wh} Maps            :{Gr}", f"https://www.google.com/maps/@{lat},{lon},8z")
     print(f"{Wh} EU              :{Gr}", ip_data["is_eu"])
     print(f"{Wh} Postal          :{Gr}", ip_data["postal"])
@@ -72,5 +73,4 @@ def IP_Track():
     print(f"{Wh} ISP             :{Gr}", ip_data["connection"]["isp"])
     print(f"{Wh} Domain          :{Gr}", ip_data["connection"]["domain"])
     print(f"{Wh} ID              :{Gr}", ip_data["timezone"]["id"])
-    print(f"{Wh} ABBR            :{Gr}", ip_data["timezone"]["abbr"])
-    print(f"{Wh} DST             :{Gr}", ip_data
+    print
