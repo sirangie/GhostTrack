@@ -26,6 +26,10 @@ Wh = '\033[1;37m'
 # personal fork note: bumped sleep from 2s to 1s, felt too slow during testing
 DEFAULT_SLEEP = 1
 
+# personal fork note: bumped default map zoom from 8z to 12z — gives a more useful
+# street-level view instead of the wide regional zoom the original used
+DEFAULT_MAP_ZOOM = 12
+
 # utilities
 
 # decorator for attaching run_banner to a function
@@ -68,15 +72,10 @@ def IP_Track():
     # fix: original used int() which truncates decimal coords and shifts the map pin
     lat = ip_data['latitude']
     lon = ip_data['longitude']
-    print(f"{Wh} Maps            :{Gr}", f"https://www.google.com/maps/@{lat},{lon},8z")
+    print(f"{Wh} Maps            :{Gr}", f"https://www.google.com/maps/@{lat},{lon},{DEFAULT_MAP_ZOOM}z")
     print(f"{Wh} EU              :{Gr}", ip_data["is_eu"])
     print(f"{Wh} Postal          :{Gr}", ip_data["postal"])
     print(f"{Wh} Calling Code    :{Gr}", ip_data["calling_code"])
     print(f"{Wh} Capital         :{Gr}", ip_data["capital"])
     print(f"{Wh} Borders         :{Gr}", ip_data["borders"])
-    print(f"{Wh} Country Flag    :{Gr}", ip_data["flag"]["emoji"])
-    print(f"{Wh} ASN             :{Gr}", ip_data["connection"]["asn"])
-    print(f"{Wh} ORG             :{Gr}", ip_data["connection"]["org"])
-    print(f"{Wh} ISP             :{Gr}", ip_data["connection"]["isp"])
-    print(f"{Wh} Domain          :{Gr}", ip_data["connection"]["domain"])
-  
+    print(f"{Wh} Country Flag    :{Gr}", ip_dat
