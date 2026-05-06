@@ -47,6 +47,13 @@ def IP_Track():
     req_api = requests.get(f"http://ipwho.is/{ip}")  # API IPWHOIS.IS
     ip_data = json.loads(req_api.text)
     time.sleep(DEFAULT_SLEEP)
+
+    # personal note: added a quick check so we get a readable error instead of a KeyError
+    # when the API returns success=false (e.g. invalid IP entered)
+    if not ip_data.get("success", True):
+        print(f"{Re}\n [!] API returned an error: {ip_data.get('message', 'unknown error')}")
+        return
+
     print(f"{Wh}\n IP target       :{Gr}", ip)
     print(f"{Wh} Type IP         :{Gr}", ip_data["type"])
     print(f"{Wh} Country         :{Gr}", ip_data["country"])
@@ -72,5 +79,4 @@ def IP_Track():
     print(f"{Wh} ORG             :{Gr}", ip_data["connection"]["org"])
     print(f"{Wh} ISP             :{Gr}", ip_data["connection"]["isp"])
     print(f"{Wh} Domain          :{Gr}", ip_data["connection"]["domain"])
-    print(f"{Wh} ID              :{Gr}", ip_data["timezone"]["id"])
-    print
+  
