@@ -26,6 +26,8 @@ pip3 install -r requirements.txt
 python3 GhostTR.py
 ```
 
+> **Note (personal):** If `pip3 install -r requirements.txt` fails, try running `pip3 install phonenumbers requests` manually — that covered all the deps I needed.
+
 Display on the menu ```IP Tracker```
 
 <img src="https://github.com/HunxByts/GhostTrack/blob/main/asset/ip.png " />
