@@ -30,6 +30,8 @@ python3 GhostTR.py
 
 > **Note (personal):** Tested on Ubuntu 22.04 and Termux (Android 12). On Termux, if you hit SSL errors with requests, run `pkg install openssl` first.
 
+> **Note (personal):** On Python 3.11+ you might see a `charset_normalizer` warning — harmless, but you can silence it by pinning `requests==2.28.2` in requirements.txt.
+
 Display on the menu ```IP Tracker```
 
 <img src="https://github.com/HunxByts/GhostTrack/blob/main/asset/ip.png " />
