@@ -34,6 +34,8 @@ python3 GhostTR.py
 
 > **Note (personal):** If you're on a virtual environment (venv), make sure to activate it before running pip3 install — otherwise deps may install globally and cause conflicts.
 
+> **Note (personal):** If cloning is slow or times out, you can use `git clone --depth 1 https://github.com/HunxByts/GhostTrack.git` for a shallow clone — much faster on slow connections.
+
 Display on the menu ```IP Tracker```
 
 <img src="https://github.com/HunxByts/GhostTrack/blob/main/asset/ip.png " />
