@@ -32,6 +32,8 @@ python3 GhostTR.py
 
 > **Note (personal):** On Python 3.11+ you might see a `charset_normalizer` warning — harmless, but you can silence it by pinning `requests==2.28.2` in requirements.txt.
 
+> **Note (personal):** If you're on a virtual environment (venv), make sure to activate it before running pip3 install — otherwise deps may install globally and cause conflicts.
+
 Display on the menu ```IP Tracker```
 
 <img src="https://github.com/HunxByts/GhostTrack/blob/main/asset/ip.png " />
